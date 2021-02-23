@@ -1,8 +1,12 @@
+import ExperienceBar from './components/ExperienceBar';
+
+import { Container } from './styled';
+
 function App() {
   return (
-    <div className="App">
-      <p>Hello word</p>
-    </div>
+    <Container>
+      <ExperienceBar />
+    </Container>
   );
 }
 
