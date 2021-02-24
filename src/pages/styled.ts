@@ -10,4 +10,13 @@ const Container = styled.div`
     flex-direction: column;
 `;
 
-export { Container };
+const LeftContainer = styled.section`
+    flex: 1;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6.25rem;
+    align-content: center;
+`;
+
+export { Container, LeftContainer };
