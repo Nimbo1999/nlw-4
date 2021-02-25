@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
+import { CountdownProvider } from '../contexts/CountDownContext';
 
 import ExperienceBar from '../components/ExperienceBar';
 
@@ -26,19 +27,21 @@ export default function Home() {
 
         <ExperienceBar />
 
-        <LeftContainer>
+        <CountdownProvider>
+          <LeftContainer>
 
-          <div>
-            <Profile />
-            <CompletedChallenges />
-            <Countdown />
-          </div>
+            <div>
+              <Profile />
+              <CompletedChallenges />
+              <Countdown />
+            </div>
 
-          <div>
-            <ChallengeBox />
-          </div>
+            <div>
+              <ChallengeBox />
+            </div>
 
-        </LeftContainer>
+          </LeftContainer>
+        </CountdownProvider>
 
       </Container>
 
