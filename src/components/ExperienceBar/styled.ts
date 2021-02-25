@@ -23,7 +23,9 @@ interface XpBar {
 }
 
 const CurrentXpBar = styled.div<XpBar>`
-    width: ${({ experience = 0 }) => `${experience}%`};
+    transition: max-width 700ms ease-in-out;
+    width: 100%;
+    max-width: ${({ experience = 0 }) => `${experience}%`};
     height: ${({theme}) => theme.spacing(.5)};
     border-radius: ${({theme}) => theme.spacing(.5)};
     background-color: ${({ theme }) => theme.pallet.green};

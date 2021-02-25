@@ -9,6 +9,7 @@ import theme from '../assets/Theme';
 import Profile from '../components/Profile';
 import CompletedChallenges from '../components/CompletedChallenges';
 import Countdown from '../components/Countdown';
+import ChallengeBox from '../components/ChallengeBox';
 
 import { Container, LeftContainer } from './styled';
 
@@ -34,7 +35,7 @@ export default function Home() {
           </div>
 
           <div>
-
+            <ChallengeBox />
           </div>
 
         </LeftContainer>

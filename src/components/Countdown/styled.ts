@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const ContdownContainer = styled.div`
     display: flex;
@@ -36,7 +36,11 @@ const Divider = styled.span`
     margin: 0 0.5rem;
 `;
 
-const CountdownButton = styled.button`
+interface CountDownButton {
+    active?: boolean,
+}
+
+const CountdownButton = styled.button<CountDownButton>`
     width: 100%;
     height: 5rem;
 
@@ -57,8 +61,24 @@ const CountdownButton = styled.button`
 
     transition: background-color 200ms linear;
 
-    &:hover {
+    &:not(:disabled):hover {
         background-color: ${({ theme }) => theme.pallet.blueDark};
+    }
+
+    ${({ active }) => active && css`
+        background-color: ${({ theme }) => theme.pallet.white};
+        color: ${({ theme }) => theme.pallet.title};
+
+        &:hover {
+            background-color: ${({ theme }) => theme.pallet.red};
+            color: ${({ theme }) => theme.pallet.white};
+        }
+    `}
+
+    &:disabled {
+        cursor: default;
+        background-color: ${({theme}) => theme.pallet.white};
+        color: ${({theme}) => theme.pallet.title};
     }
 `;
 
